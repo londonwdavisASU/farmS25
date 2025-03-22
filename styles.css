@@ -1,0 +1,386 @@
+/*Code By London Davis*/
+/* IMPORTED FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Habibi&family=Irish+Grover&display=swap');
+
+/* CSS REST */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* ROOT VARIABLES */
+:root {
+    --Green: #06A816;
+    --Orange: #E75D02;
+    --Black: #000000;
+    --White: #ffffff;
+}
+
+/* Global Styles (mobile first/small) */
+h1,
+h2,
+h3 {
+    font-family: "Irish Grover";
+}
+
+p {
+    font-family: "Habibi";
+    font-size: 1.25em;
+    margin: 1em;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-left: 0.5em;
+}
+
+h2 {
+    font-size: 1.75em;
+    margin-left: 0.7em;
+}
+
+h3 {
+    font-size: 1.25em;
+    text-align: center;
+}
+
+/* Header */
+header {
+    background-color: var(--Green);
+    color: var(--White);
+    margin-bottom: 1.5em;
+    max-height: 5em;
+    padding: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+}
+
+nav,
+a {
+    text-decoration: none;
+    color: var(--White);
+    background-color: var(--Orange);
+}
+
+ul li:nth-child(1),
+ul li:nth-child(2) {
+    background-color: var(--Orange);
+    padding: 0.5em 5em;
+    border: 2px solid var(--White);
+}
+
+header ul li:last-child {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    background-color: var(--Orange);
+    padding: 1em;
+    z-index: 1000;
+    color: var(--White);
+    border: 2px solid var(--White);
+}
+
+/* Footer */
+footer {
+    background-color: var(--Green);
+    color: var(--White);
+}
+
+.footer-grid {
+    display: grid;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+small {
+    background-color: var(--White);
+    color: var(--Green);
+    display: block;
+    text-align: center;
+    padding: 1em;
+}
+
+/*Grids */
+.fruit-grid,
+.vegetable-grid {
+    display: grid;
+    gap: 1.5em;
+    justify-content: center;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.fruit-grid .image-container,
+.vegetable-grid .image-container {
+    position: relative;
+    display: block;
+    margin: 1em;
+}
+
+.fruit-grid img,
+.vegetable-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Overlay Text*/
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.5em 1em;
+    text-align: center;
+    color: white;
+    font-size: 1.5em;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/*Responsive*/
+@media (max-width: 600px) {
+
+    ul li:nth-child(1),
+    ul li:nth-child(2) {
+        margin-top: 1em;
+    }
+
+    h2:first-of-type {
+        margin-top: 4em;
+    }
+}
+
+@media (min-width: 600px) {
+    header {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        text-align: left;
+    }
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1em;
+    }
+
+    .fruit-grid,
+    .vegetable-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    ul li:nth-child(1),
+    ul li:nth-child(2) {
+        margin-top: 1em;
+    }
+
+    h2:first-of-type {
+        margin-top: 5em;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+    header {
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        text-align: left;
+    }
+
+    h1 {
+        grid-column: 1 / 2;
+    }
+
+    header p {
+        grid-column: 2 / 3;
+    }
+
+    /* Navigation Below Header */
+    header ul {
+        grid-column: 1 / -1;
+        display: flex;
+        justify-content: center;
+        gap: 1em;
+        margin-top: 2em;
+    }
+
+    ul li:nth-child(1),
+    ul li:nth-child(2) {
+        padding: 0.5em 2em;
+    }
+}
+
+@media (min-width: 900px) {
+
+    .fruit-grid,
+    .vegetable-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (min-width: 1024px) {
+    header {
+        grid-template-columns: 1fr auto;
+    }
+
+    h1,
+    p {
+        grid-column: 1;
+    }
+
+    ul {
+        grid-column: 2;
+        display: flex;
+        gap: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .fruit-grid,
+    .vegetable-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
